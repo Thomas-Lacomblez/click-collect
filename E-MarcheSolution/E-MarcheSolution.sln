@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29613.14
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "E-Marche", "E-Marche\E-Marche.csproj", "{D4B4A1C9-20F5-4DB7-B75A-EEDF6104E6BE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "E-MarcheWA", "E-MarcheWA\E-MarcheWA.csproj", "{6FA94978-E309-4EBA-924F-7C8A792E94E0}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D4B4A1C9-20F5-4DB7-B75A-EEDF6104E6BE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D4B4A1C9-20F5-4DB7-B75A-EEDF6104E6BE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D4B4A1C9-20F5-4DB7-B75A-EEDF6104E6BE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D4B4A1C9-20F5-4DB7-B75A-EEDF6104E6BE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6FA94978-E309-4EBA-924F-7C8A792E94E0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6FA94978-E309-4EBA-924F-7C8A792E94E0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6FA94978-E309-4EBA-924F-7C8A792E94E0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6FA94978-E309-4EBA-924F-7C8A792E94E0}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {7A85A6D6-0388-474A-B37E-FF90A35A8BF8}
+	EndGlobalSection
+EndGlobal

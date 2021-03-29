@@ -1,0 +1,40 @@
+﻿@model IEnumerable<E_MarcheWA.Models.CategorieData>
+
+@{
+    ViewData["Title"] = "ListMarche";
+}
+
+<h1>ListMarche</h1>
+
+<p>
+    @*@Html.ActionLink("Create New", "Create")*@
+</p>
+<div class="d-flex flex-row bd-highlight mb-4>
+    <table>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    <div class="col-md-8" style="width: 300px;display: inline-block">
+                        <span class="text-center"><h3 class="card-header" style="background-color: #C2C3C7">@Html.DisplayFor(modelItem => item.Nom)</h3></span>
+                        <a href="@Url.Action("MarchePage","Categories",new { id=item.CategorieId })">
+                            <img style="height: 200px; width: 100%; display: block;" src=" @Html.DisplayFor(modelItem => item.Photo)" />
+                        </a>
+                        <div class="text-center">
+                            <div class="card-body">
+                                @*<button type="button" class="btn btn-secondary"><a href="#">parcourez</a></button>*@
+                                @*<button type="button" class="btn btn-secondary"><a href="#">Adhérer</a></button>*@
+                            </div>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+        }
+    </table>
+</div>
+
+<div>
+    @Html.ActionLink("", "", "")
+    @Html.ActionLink("Retour", "Index", "Home") |
+    @Html.ActionLink("Ajouter Un Marché", "Create", "Categories")
+</div>

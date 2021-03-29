@@ -1,0 +1,127 @@
+﻿@model IEnumerable<E_MarcheWA.Models.ClientData>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Liste Des Clients</h1>
+<p>
+    <a asp-action="Inscription_client">Ajouter Un utilisateur</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            @*<th>
+                    @Html.DisplayNameFor(model => model.ClientId)
+                </th>*@
+            <th>
+                @Html.DisplayNameFor(model => model.Nom)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Prenom)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Adresse)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Tel)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Email)
+            </th>
+            @*<th>
+                    @Html.DisplayNameFor(model => model.LoginUser)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.MdpUser)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.UserRole)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Typeprivilege)
+                </th>*@
+            <th>
+                @Html.DisplayNameFor(model => model.DescriptionUser)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Ville)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Arrondissement)
+            </th>
+            @*<th>
+                    @Html.DisplayNameFor(model => model.CategorieId)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Smsid)
+                </th>*@
+
+            <th></th>
+            <th></th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                @*<td>
+                        @Html.DisplayFor(modelItem => item.ClientId)
+                    </td>*@
+                <td>
+                    @Html.DisplayFor(modelItem => item.Nom)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Prenom)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Adresse)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Tel)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Email)
+                </td>
+                @*<td>
+                        @Html.DisplayFor(modelItem => item.LoginUser)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.MdpUser)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.UserRole)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Typeprivilege)
+                    </td>*@
+                <td>
+                    @Html.DisplayFor(modelItem => item.DescriptionUser)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Ville)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Arrondissement)
+                </td>
+                @*<td>
+                        @Html.DisplayFor(modelItem => item.CategorieId)
+                    </td>*@
+                @*<td>
+                        @Html.DisplayFor(modelItem => item.Smsid)
+                    </td>*@
+                <td>
+                    <button type="button" class="btn btn-secondary">@Html.ActionLink("Edit", "Edit", new { id = item.ClientId }, new { @class = "my-class" })</button>
+                </td>
+                <td>
+                    <button type="button" class="btn btn-secondary">@Html.ActionLink("Details", "Details", new { id = item.ClientId }, new { @class = "my-class" })</button>
+                </td>
+                <td>
+                    <button class="btn btn-sm btn-danger"><i class="fa fa-trash">@Html.ActionLink("X", "Delete", new { id = item.ClientId }, new { @class = "my-class" })</button>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+@Html.ActionLink("Retour", "ListMarche", "Categories")

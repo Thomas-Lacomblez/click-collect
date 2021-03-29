@@ -1,0 +1,95 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+@*<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+</div>*@
+
+    <div class="row">
+        <body style="background-color: #60C1AE;">
+            <div style="text-align:center">
+                <h1 style="margin-top: 40px"> Clic & Collect </h1>
+                @*<p>
+                Un marché virtuel pour faciliter vos achats
+            </p>*@
+                <img class=img-responsive style="max-width:100%;height:auto;margin-top: 120px;margin-left:120px" src="../images/logo3C.jpg" alt="logo3">
+                @*C:\Users\cherif\source\repos\NET5\E-MarcheSolution\E-MarcheWA\wwwroot\lib\bootstrap\dist\css
+            C:\Users\cherif\source\repos\Maches_Deconfines_Sulution_V1\Maches_Deconfines\Content*@
+
+            </div>
+            <br /><br /> <br /><br />
+            @*@if (Session["siren"] == null && Session["nom"] == null)
+        {*@
+
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="col-md-8">
+                        <span class="text-center"><h3 class="card-header" style="background-color: #C2C3C7">Commerçant</h3></span>
+                        <img style="height: 200px; width: 100%; display: block;" src="../images/logoSelle.jpg" alt="Card image">
+                        <div class="card-body">
+                            <p class="card-text">Vous êtes artisan ou commerçant.Vous voulez vous raprocher de vos client,  Vous avez l'ambition de ....</p>
+                        </div>
+                        <div class="text-center">
+                            <div class="card-body">
+                                <button type="button" class="btn btn-secondary">@Html.ActionLink("Inscription", "Inscription_commercant", "Commercants", new{ @class="my-class" })</button>
+                                <button type="button" class="btn btn-secondary">@Html.ActionLink("Connexion", "Connexion_commercant", "Commercants", new{ @class="my-class" })</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="col-md-8">
+                        <span class="text-center"><h3 class="card-header" style="background-color: #C2C3C7">Client</h3></span>
+                        <img style="height: 200px; width: 100%; display: block;" src="../images/logoCost.png" alt="Card image">
+                        <div class="card-body">
+                            <p class="card-text">Vous êtes à la rechrehce d'un marché, d'un produit. Vous voulez faire vos courses sans ce depalcer de chez vous ou de votre travail.</p>
+                        </div>
+                        <div class="text-center">
+                            <div class="card-body">
+                                <button type="button" class="btn btn-secondary">@Html.ActionLink("Inscription", "Inscription_client", "Clients", new{ @class="my-class" })</button>
+                                <button type="button" class="btn btn-secondary">@Html.ActionLink("Connexion", "Connexion_client", "Clients", new{ @class="my-class" })</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            @*}*@
+            @*else if (Session["siren"] == null && Session["nom"] != null)
+        {
+            <div class="row" style="text-align:center;max-width:100%;height:auto;">
+                <div class="col-md-4"></div>
+                <div class="col-md-4">
+                    <div class="col-md-2"></div>
+                    <div class="col-md-8">
+                        <span class="text-center"><h3 class="card-header" style="background-color: #C2C3C7">Votre espace client</h3></span>
+                        <a href="@Url.Action("ListArticleUtilisateur", "Articles")">
+                            <img style="height: 200px; width: 100%; display: block;" src="../Content/logoCost.png" alt="Card image">
+                        </a>
+                    </div>*@
+
+            @*</div>
+                <div class="col-md-4"></div>
+
+            </div>
+        }
+        else if (Session["siren"] != null && Session["nom"] != null)
+        {
+            <div class="row" style="text-align:center;max-width:100%;height:auto;">
+                <div class="col-md-4"></div>
+                <div class="col-md-4">
+                    <div class="col-md-2"></div>
+                    <div class="col-md-8">
+                        <span class="text-center"><h3 class="card-header" style="background-color: #C2C3C7">Votre espace Commerçant</h3></span>
+                        <a href="@Url.Action("ListMarche", "Categories")">
+                            <img style="height: 200px; width: 100%; display: block;" src="../Content/logoSelle.jpg" alt="Card image">
+                        </a>
+                    </div>
+
+                </div>
+                <div class="col-md-4"></div>
+            </div>
+        }*@
+        </body>
+    </div>

@@ -1,0 +1,112 @@
+﻿@model IEnumerable<E_MarcheWA.Models.CategorieData>
+
+@{
+    ViewData["Title"] = "Index";
+}
+<h2>Liste des Marchés</h2>
+
+<p>
+    @Html.ActionLink("Ajouter Un Marché", "Create", "Categories")
+</p>
+
+    <table class="table">
+        <thead>
+            <tr>
+
+                <th>
+                    @Html.DisplayNameFor(model => model.Photo)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Nom)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Discription)
+                </th>
+
+                <th></th>
+                <th></th>
+                <th></th>
+            </tr>
+        </thead>
+      @*  <tbody>
+    @foreach (var item in Model) {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CategorieId)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Libelle)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Photo)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Nom)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Discription)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ClientId)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id=item.CategorieId  }) |
+                    @Html.ActionLink("Details", "Details", new {id=item.CategorieId }) |
+                    @Html.ActionLink("Delete", "Delete", new {id=item.CategorieId })
+                </td>
+            </tr>
+    }
+        </tbody>
+    </table>*@
+
+@*<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.photo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Nom)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.)
+        </th>*@
+        @*<th>
+                @Html.DisplayNameFor(model => model.Client.nom)
+            </th>*@
+        @*<th></th>
+        <th></th>
+        <th></th>
+    </tr>*@
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            @*<td>
+                    @Html.DisplayFor(modelItem => item.libelle)
+                </td>*@
+            <td>
+                <img style="height: 40px; width:40px" src="@Html.DisplayFor(modelItem => item.Photo)" />
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Nom)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Discription)
+            </td>
+            @*<td>
+                    @Html.DisplayFor(modelItem => item.Client.nom)
+                </td>*@
+            <td>
+                <button type="button" class="btn btn-secondary">@Html.ActionLink("Edit", "Edit", new { id = item.CategorieId },new{ @class="my-class" })</button>
+            </td>
+            <td>
+                <button type="button" class="btn btn-secondary">@Html.ActionLink("Details", "Details", new { id = item.CategorieId },new{ @class="my-class" })</button>
+            </td>
+            <td>
+                <button class="btn btn-sm btn-danger"><i class="fa fa-trash">@Html.ActionLink("X", "Delete", new { id = item.CategorieId },new{ @class="my-class" })</i></button>
+            </td>
+        </tr>
+    }
+
+</table>
+@Html.ActionLink("Retour", "ListMarche", "Categories")

@@ -1,0 +1,131 @@
+﻿@model IEnumerable<E_MarcheWA.Models.PanierData>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+@*<h1>Index</h1>
+
+    <p>
+        <a asp-action="Create">Create New</a>
+    </p>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.PanierId)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.PrixArticle)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Cantite)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Nom)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Photo)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.CommandeId)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.ArticleId)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.ClientId)
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+    @foreach (var item in Model) {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.PanierId)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.PrixArticle)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Cantite)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Nom)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Photo)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CommandeId)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ArticleId)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ClientId)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id=item.PanierId }) |
+                    @Html.ActionLink("Details", "Details", new { id=item.PanierId  }) |
+                    @Html.ActionLink("Delete", "Delete", new { id=item.PanierId  })
+                </td>
+            </tr>
+    }
+        </tbody>
+    </table>*@
+<h2>Panier</h2>
+
+<div class="container mb-4">
+    <div class="row">
+        <div class="col-12">
+            <div class="table-responsive">
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th scope="col"> </th>
+                            <th scope="col">Produit</th>
+                            <th scope="col" class="text-center">Quantité</th>
+                            <th scope="col" class="text-right">Prix</th>
+                            <th scope="col"> </th>
+
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <td><img style="height: 40px; width:40px" src="@Html.DisplayFor(modelItem => item.Photo)" /> </td>
+                                <td>@Html.DisplayFor(modelItem => item.Nom)</td>
+                                <td><input class="form-control" type="text" value=" @Html.DisplayFor(modelItem => item.Cantite)" /></td>
+                                <td class="text-right">@Html.DisplayFor(modelItem => item.PrixArticle) €</td>
+                                <td class="text-right"><button class="btn btn-sm btn-danger"><i class="fa fa-trash">@Html.ActionLink("X", "Delete", new { id = item.PanierId },new{ @class="my-class" })</i> </button> </td>
+                            </tr>
+                        }
+
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td><strong>Total</strong></td>
+                            @*<td class="text-right"><strong>@Html.Countprice()</strong></td>*@
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="col mb-2">
+            <div class="row">
+                <div class="col-sm-12  col-md-6">
+                    <button class="btn btn-block btn-light">@Html.ActionLink("Continuer vos achats", "ListArticle", "Articles")</button>
+                </div>
+                <div class="col-sm-12 col-md-6 text-right">
+                    <button class="btn btn-block btn-light">@Html.ActionLink("confirmé commande", "ListArticle", "Articles")</button>
+                    @*<a href="../Commandes/CommandeValidation"><button class="btn btn-lg btn-block btn-success text-uppercase">confirmer</button></a>*@
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div> @Html.ActionLink("Retour", "ListArticle", "Articles")</div>

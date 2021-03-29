@@ -1,0 +1,52 @@
+﻿@model IEnumerable<E_MarcheWA.Models.ArticleData>
+
+@{
+    ViewData["Title"] = "ListArticle";
+}
+
+
+
+
+<h2>Produits sur le marché</h2>
+
+
+<div class="d-flex flex-row bd-highlight mb-4">
+
+    <table>
+        <tr class="d-flex flex-nowrap">
+            @foreach (var item in Model)
+            {
+          
+
+                <td>
+                    <div class="col-md-8" style="width: 300px;margin-left:10px;display: inline-block">
+                        <img style="height: 200px; width: 100%; display: block;" src="@Html.DisplayFor(modelItem => item.Photo)" alt="Card image">
+
+                        <p class="card-text">prix: @Html.DisplayFor(modelItem => item.Prix)</p>
+
+                        <p class="card-text">Descreption: @Html.DisplayFor(modelItem => item.ArticleDescreption)</p>
+
+                        <p class="card-text">Etat: @Html.DisplayFor(modelItem => item.Etat)</p>
+
+                        <div class="text-center">
+                            <div class="card-body">
+                                @*<input type="Submit" class="btn btn-sm btn-warning" value="Ajouter au panier" />*@
+                                <button class="btn btn-sm btn-warning"> @Html.ActionLink("Ajouter au panier", "AjoutPanier", "Articles",new { id = item.ArticleId }) </button>
+                                <br><br>
+                                <label>Qunatité</label>
+                                <input type="number" name="quantity" id="" value="1" min="1" max="10" />
+                            </div>
+                        </div>
+                    </div>
+                </td>
+
+            }
+        </tr>
+    </table>
+    @*</form>*@
+</div>
+<div>
+    @Html.ActionLink(" ", "", "")
+    @Html.ActionLink("Listes", "Index", "Articles") |
+    @Html.ActionLink("Ajouter Un produit", "Create", "Articles")
+</div>

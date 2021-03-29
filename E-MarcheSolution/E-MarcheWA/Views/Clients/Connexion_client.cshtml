@@ -1,0 +1,43 @@
+﻿@model E_MarcheWA.Models.ClientData
+
+@{
+    ViewData["Title"] = "Connexion_client";
+}
+
+<h1>Connexion_client</h1>
+
+<h4>ClientData</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Connexion_client">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+          
+           
+            <div class="form-group">
+                <label asp-for="LoginUser" class="control-label"></label>
+                <input asp-for="LoginUser" class="form-control" />
+                <span asp-validation-for="LoginUser" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="MdpUser" class="control-label"></label>
+                <input asp-for="MdpUser" class="form-control" />
+                <span asp-validation-for="MdpUser" class="text-danger"></span>
+            </div>
+            
+            <div class="form-group">
+                <input type="submit" value="Connexion" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    @*<a asp-action="Index">Back to List</a>*@
+    @*<button type="button" class="btn btn-primary">*@@Html.ActionLink("Retour", "Index", "Home", new { style = "color:white" }) | @*</button>*@
+    @*<button type="button" class="btn btn-primary">*@@Html.ActionLink("Inscreption", "Inscription_client", "Clients")@*</button>*@
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
